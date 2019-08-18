@@ -1,8 +1,12 @@
 package school;
 
+import fileaccess.Person;
+
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class School {
     private String name;
@@ -71,6 +75,11 @@ public class School {
             }
         };
         studentsCollection.sort(sumDegreeComparator);
+    }
+
+    public List<Student> sortStudentsByAgeUsingStreams(){
+//        return studentsCollection.stream().sorted(Comparator.comparing(Student::getAge)).collect(Collectors.toList());
+        return studentsCollection.stream().sorted((p1,p2) -> Integer.compare(p1.getAge(), p2.getAge()) ).collect(Collectors.toList());
     }
 
     // preparation for sortedStudentsByDegree(): getting all the subjects for particular student

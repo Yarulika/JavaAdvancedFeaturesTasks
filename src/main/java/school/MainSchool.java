@@ -64,5 +64,11 @@ public class MainSchool {
         for (StudentSubject stusubj2: sdaSchool.sortedStudentsByDegree()){
             System.out.println(stusubj2.getStudent().getName() + " " + stusubj2.getSubject().getSubjectTitle() + " " + stusubj2.getSubject().getSubjectDegree());
         }
+
+        System.out.println("==========================================================");
+        System.out.println("Sorted collection by Age Using Streams");
+        for (Student st: sdaSchool.sortStudentsByAgeUsingStreams()){
+            System.out.println(st.getName() + ": " + st.getAge() );
+        }
     }
 }
